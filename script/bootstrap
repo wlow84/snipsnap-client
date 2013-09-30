@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# Bootstrap the project
+
+set -e
+
+bundle install --binstubs
