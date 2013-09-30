@@ -1,3 +1,4 @@
+require 'snipsnap/api'
 require 'snipsnap/configuration'
 
 module Snipsnap
@@ -5,9 +6,13 @@ module Snipsnap
     attr_accessor :configuration
 
     def configure
-      (self.configuration || Configuration.new).tap do |config|
+      (self.configuration ||= Configuration.new).tap do |config|
         yield config if block_given?
       end
+    end
+
+    def connect(configuration = Snipsnap.configuration)
+      Api.new(configuration)
     end
   end
 end

@@ -1,12 +1,12 @@
-# Snipsnap::Client
+# Snipsnap
 
-TODO: Write a gem description
+Snipsnap API wrapper
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'snipsnap-client'
+    gem 'snipsnap-client', github: 'snipsnap/snipsnap-client'
 
 And then execute:
 
@@ -18,7 +18,52 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+First, configure your connection (e.g. in a Rails initializer)
+
+```ruby
+# config/initializers/snipsnap.rb
+Snipsnap.configure do |config|
+  config.protocol = 'https'
+  config.host     = 'api.snipsnap.it'
+  config.version  = 2
+end
+```
+
+Then, get an instance
+
+```ruby
+client = Snipsnap.connect
+```
+
+### Users
+
+To access the `users` resource
+
+```ruby
+users = client.users
+```
+
+To do a lookup,
+
+```ruby
+# lookup account information for a user by ID
+users.lookup(id: 1234)  # => {
+                        #      "user_id":1234,
+                        #      "email_hash":"50M3_H45H",
+                        #      "facebook_username":"facebook_1234",
+                        #      "twitter_username":"twitter_1234",
+                        #      "facebook_email_hash":"50M3_H45H"
+                        #    }
+
+# lookup account information for a user by email hash
+users.lookup(hash: "50M3_H45H") # => {
+                                #      "user_id":1234,
+                                #      "email_hash":"50M3_H45H",
+                                #      "facebook_username":"facebook_1234",
+                                #      "twitter_username":"twitter_1234",
+                                #      "facebook_email_hash":"50M3_H45H"
+                                #    }
+```
 
 ## Contributing
 

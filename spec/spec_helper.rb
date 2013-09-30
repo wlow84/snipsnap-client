@@ -1,7 +1,6 @@
 require 'simplecov-gem-adapter'
 SimpleCov.start 'gem'
 
-require 'snipsnap'
 require 'should_not/rspec'
 require 'pry'
 

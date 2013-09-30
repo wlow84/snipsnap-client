@@ -31,3 +31,9 @@ describe Snipsnap, "#configure" do
     its(:uri)      { should eq "http://test.api.snipsnap.it/v1" }
   end
 end
+
+describe Snipsnap, "#connect" do
+  subject(:connection) { Snipsnap.connect }
+
+  it { should be_a Snipsnap::Api }
+end
