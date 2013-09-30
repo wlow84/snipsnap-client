@@ -1,9 +1,10 @@
 require 'spec_helper'
 
 describe "User account lookup", :acceptance do
-  let(:client) { Snipsnap.connect.users }
+  let(:config)     { Snipsnap::Configuration.new }
+  let(:client)     { Snipsnap.connect(config).users }
   let(:email_hash) { "dc2c59b837aa4f99e77b57f74751fe72242d3c6e" }
-  let(:user_id)   { 214907 }
+  let(:user_id)    { 214907 }
 
   context "when given an email hash" do
     subject(:user) { client.lookup(email_hash: email_hash) }
