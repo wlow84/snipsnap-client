@@ -6,15 +6,21 @@ Snipsnap API wrapper
 
 Add this line to your application's Gemfile:
 
-    gem 'snipsnap-client', github: 'snipsnap/snipsnap-client'
+```ruby
+gem 'snipsnap-client', github: 'snipsnap/snipsnap-client'
+```
 
 And then execute:
 
-    $ bundle
+```console
+$ bundle
+```
 
 Or install it yourself as:
 
-    $ gem install snipsnap-client
+```console
+$ gem install snipsnap-client
+```
 
 ## Usage
 
