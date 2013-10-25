@@ -1,4 +1,4 @@
-require 'snipsnap/user'
+require 'snipsnap/users'
 
 module Snipsnap
   class Api
@@ -7,7 +7,7 @@ module Snipsnap
     end
 
     def users
-      User.new(@configuration)
+      Users.new(@configuration)
     end
   end
 end

@@ -2,7 +2,7 @@ require 'faraday'
 require 'json'
 
 module Snipsnap
-  class User
+  class Users
     def initialize(configuration)
       uri = [configuration.uri, "users"].join("/")
       @connection = ::Faraday.new(url: uri)

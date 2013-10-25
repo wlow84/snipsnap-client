@@ -5,5 +5,5 @@ describe Snipsnap::Api, "#users" do
   let(:api) { Snipsnap::Api.new(config) }
   subject(:users) { api.users }
 
-  it { should be_a Snipsnap::User }
+  it { should be_a Snipsnap::Users }
 end

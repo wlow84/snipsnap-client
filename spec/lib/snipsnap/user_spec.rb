@@ -1,8 +1,6 @@
 require 'spec_helper'
 
-describe Snipsnap::User, "#lookup" do
+describe Snipsnap::Users, "#lookup" do
   let(:config)   { Snipsnap::Configuration.new }
-  let(:client)   { Snipsnap::User.new(config) }
-
-  
+  let(:client)   { Snipsnap::Users.new(config) }  
 end
