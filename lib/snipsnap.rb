@@ -11,7 +11,7 @@ module Snipsnap
       end
     end
 
-    def connect(configuration = Snipsnap.configuration)
+    def connect(configuration = Snipsnap.configure)
       Api.new(configuration)
     end
   end

@@ -24,7 +24,14 @@ $ gem install snipsnap-client
 
 ## Usage
 
-First, configure your connection (e.g. in a Rails initializer)
+The default configuration will look for values set via environment variables
+
+* `SNIPSNAP_PROTOCOL` - `http` or `https`. Defaults to `https`
+* `SNIPSNAP_HOST` - The hostname to connect to. Defaults to `api.snipsnap.it`
+* `SNIPSNAP_VERSION` - The API version to use. Defaults to `2`
+
+If you don't want to use environment variables, you can manually configure via
+the `configure` method (e.g. in a Rails initializer)
 
 ```ruby
 # config/initializers/snipsnap.rb

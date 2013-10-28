@@ -3,9 +3,9 @@ module Snipsnap
     attr_accessor :protocol, :host, :version
 
     def initialize
-      @protocol = "https"
-      @host     = "api.snipsnap.it"
-      @version  = 2
+      @protocol = ENV['SNIPSNAP_PROTOCOL'] || "https"
+      @host     = ENV['SNIPSNAP_HOST'] || "api.snipsnap.it"
+      @version  = ENV['SNIPSNAP_VERSION'] || 2
     end
 
     def uri
